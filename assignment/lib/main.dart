@@ -13,8 +13,11 @@ class MyApp extends StatefulWidget {
     }
 }
 class _TextControl extends State<MyApp>{
-  String name1 = "This changed";
+
   String name2 = "This changed Again";
+  final List _digits = ['1','2','3','4','5'];
+   String name1 = '0';
+   int i=0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,9 +26,10 @@ class _TextControl extends State<MyApp>{
         body: Column(children: [
           Text(name1),
           RaisedButton(onPressed: (){
-            setState(() {
-                          name1 = name2;
-            print(name1);
+            setState(() {            
+            name1 = _digits[i];
+            i++;
+            print(i);
                         });
           },
           color: Colors.redAccent,
